@@ -27,7 +27,7 @@ namespace WrapperTests
         [Fact]
         public void ItCreatesACObject()
         {
-            var cObj = new CObject("init", null);
+            var cObj = new CObject("init");
 
             cObj.Inner.Should().BeNull();
             cObj.Name.Should().Be("init");
@@ -37,7 +37,7 @@ namespace WrapperTests
         [Fact]
         public void ItSetsInnerObject()
         {
-            var cObj = new CObject("init", null);
+            var cObj = new CObject("init");
 
             cObj.Inner = new int[] { 1, 2, 3 };
 

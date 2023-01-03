@@ -85,7 +85,7 @@ public class CObject : IDisposable
 
     public void Dispose()
     {
-        if (!handle.IsInvalid)
+        if (handle.IsInvalid)
         {
             handle.Dispose();
         }
@@ -96,7 +96,7 @@ public class CObject : IDisposable
         }
     }
 
-    internal class ObjectHandle : SafeHandleMinusOneIsInvalid
+    internal class ObjectHandle : SafeHandleZeroOrMinusOneIsInvalid 
     {
         public ObjectHandle(IntPtr handle)
             : base(true)
